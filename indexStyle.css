@@ -1,9 +1,20 @@
-body {
-    background-color:aqua;
-}
 h1 {
     font-weight:bold;
 }
 .bordered {
     border:1px blue solid;
+}
+.container {
+    background-color:gray;
+}
+.centered {
+    overflow:auto;
+    text-align:center;
+    display:block;
+}
+.gray {
+    background-color:gray !important;
+}
+.panel-header, .panel-footer, .panel-body {
+    overflow:inherit;
 }

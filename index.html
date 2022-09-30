@@ -12,21 +12,40 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
-  <div class="panel-header">
-    <div class="col-lg-1"></div><div class="col-lg-10"><h1>header</h1></div><div class="col-lg-1"></div>
-  </div>
-  <div class="panel-body bordered">
-    <body>
-      <div class="col-lg-1"></div>
-      <div class="col-lg-10"><h1>Nick Goh Testing site</title>
-        <p>...and you'll get to test all this too!</p></div>
-      <div class="col-lg-1"></div>
-    </body>
-  </div>
-  <div class="panel-footer">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-10"><h1>footer</h1></div>
-    <div class="col-lg-1"></div>
-  </div>
-
+  <body>
+    <div class="centered gray">
+      <div class="panel-header bordered">
+        <div class="col-lg-1 container"></div>
+        <div class="col-lg-10 container"><h1>header</h1></div>
+        <div class="col-lg-1 container"></div>
+      </div>
+      <div class="panel-body bordered">
+          <div class="col-lg-1 container"></div>
+          <div class="col-lg-10 container"><h1>Nick Goh Testing site</h1></title>
+            <div class="col-lg-6 container"><button class="btn btn-primary" ng-click="goToGoogle()">Click Here!</button></div>
+            <div class="col-lg-6 container"><button class="btn btn-danger" href="#">Don't Click here!</button></div>
+            <div class="col-lg-12"><h2 href="#">Basic Project 1</h2></div>
+            <div class="col-lg-12"><h2 href="#">Basic Project 2</h2></div>
+            <div class="col-lg-12"><h2 href="#">Basic Project 3</h2></div>
+            <div class="col-lg-12"><h2 href="#">Basic Project 4</h2></div>
+            <div class="col-lg-12"><h2 href="#">Intermediate Project 1</h2></div>
+            <div class="col-lg-12"><h2 href="#">Intermediate Project 2</h2></div>
+            <div class="col-lg-12"><h2 href="#">Intermediate Project 3</h2></div>
+            <div class="col-lg-12"><h2 href="#">Complex Project 1</h2></div>
+            <div class="col-lg-12"><h2 href="#">Complex Project 2</h2></div>
+          </div>
+          <div class="col-lg-1 container"></div>
+      </div>
+      <div class="panel-footer gray bordered">
+        <div class="col-lg-1 container"></div>
+        <div class="col-lg-10 container"><h1>footer</h1></div>
+        <div class="col-lg-1 container"></div>
+      </div>
+    </div>
+    <script>
+      function goToGoogle() {
+        window.location.href="https://www.google.com";
+      }
+    </script>
+</body>
 </html>

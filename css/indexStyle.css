@@ -1,11 +1,16 @@
 h1 {
     font-weight:bold;
 }
+img {
+    max-height:100px;
+    max-width:100px;
+}
 .bordered {
     border:1px blue solid;
 }
 .container {
     background-color:gray;
+    display:block;
 }
 .centered {
     overflow:auto;
@@ -17,4 +22,7 @@ h1 {
 }
 .panel-header, .panel-footer, .panel-body {
     overflow:inherit;
+}
+.inRow {
+    display:inline-block;
 }

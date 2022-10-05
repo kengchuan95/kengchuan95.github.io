@@ -110,7 +110,7 @@
         var BACPerDrink = alcoholInBeer / (weightInGrams * sexRate) * 100;
         if (weightInGrams == 0) BACPerDrink = "Weight not given";
         else if (BACPerDrink < 0) BACPerDrink = "Selection of sex not made";
-        document.getElementById("BAC").value = BACPerDrink;
+        document.getElementById("BAC").value = BACPerDrink.toFixed(3);
       }
     </script>
   </body>

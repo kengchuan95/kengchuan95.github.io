@@ -94,15 +94,16 @@
           if (hours > 0) {
             timeStatement += hours + " Hours, ";
           }
-            if (minutes > 0) {
-              timeStatement += minutes + " Minutes, ";
-            }
-            if (seconds > 0) {
-              timeStatement += seconds + " Seconds";
-            }
+          if (minutes > 0) {
+            timeStatement += minutes + " Minutes, ";
+          }
+          if (seconds > 0) {
+            timeStatement += seconds + " Seconds";
+          }
           document.getElementById("timeLeft").innerHTML = timeStatement;
           // If the count down is finished, write some text
-          if (distance < 0) {;
+          if (distance < 0) {
+            ;
             document.getElementById("timeLeft").innerHTML = "EXPIRED";
           }
         }, 100);

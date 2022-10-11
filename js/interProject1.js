@@ -2,7 +2,7 @@ function calculateDrinks() {
     var BACStorage = parseFloat(sessionStorage.getItem("BAC"));
     if (!BACStorage) BACStorage = 0.000;
     var BACToAdd=calculateBACPer();
-    document.getElementById("BACInteger").value=BACToAdd;
+    document.getElementById("BACInteger").value=BACToAdd.toFixed(3);
     var currentBAC = parseFloat(sessionStorage.getItem("BAC"));
     BACStorage+=parseFloat(BACToAdd);
     document.getElementById("BAC").innerText=BACStorage.toFixed(3);
@@ -43,14 +43,17 @@ function calculateBACPer() {
 
     if (weightInGrams==0) {
         BACPerDrink="Weight not given";
+        sessionStorage.setItem("BACPer",0.00);
     }
 
     else if (BACPerDrink < 0) {
         BACPerDrink="Selection of sex not made";
+        sessionStorage.setItem("BACPer",0.00);
     }
 
     else {
-        var BACInteger=BACPerDrink.toFixed(3);
+        var BACInteger=BACPerDrink;
+        sessionStorage.setItem("BACPer",BACInteger);
     }
 
     return BACInteger;
@@ -58,7 +61,8 @@ function calculateBACPer() {
 
 function addTime(BACPerDrink) {
     //function called by the button. this increments and sets the new time. the countdown is handled by the interval timer still
-    var hoursToAdd=BACPerDrink / 0.016;
+    var BACPer = sessionStorage.getItem("BACPer");
+    var hoursToAdd=BACPerDrink / BACPer;
     var timeToAdd=60 * 60 * 1000 * hoursToAdd;
     var currentTimer=new Date(document.getElementById("time").innerText).getTime();
     currentTimer=new Date(currentTimer + timeToAdd); //60 seconds/minute * 10 minutes * 1000ms/s

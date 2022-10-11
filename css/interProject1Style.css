@@ -1,0 +1,19 @@
+.panel-footer {
+    border: 1px solid #ddd;
+    background-color:inherit !important;
+}
+.col-md-12 {
+    margin:1em 0em;
+}
+.button {
+    color:blanchedalmond;
+}
+body {
+    background-color:bisque !important;
+}
+.container {
+    background-color:inherit !important;
+}
+.left {
+    text-align:left !important;
+}

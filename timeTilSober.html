@@ -112,7 +112,7 @@
         sessionStorage.setItem("time",countDownDate);
         // Update the count down every .1 second
         var x = setInterval(function() {
-          var countDownTime = sessionStorage.getItem("time");
+          var countDownTime = new Date(document.getElementById("time").innerText).getTime();
           var now = new Date().getTime();
           // Find the distance between now and the count down date
           var distance = countDownTime - now;
@@ -132,17 +132,19 @@
           if (minutes > 0) {
             timeStatement += minutes + " Minutes, ";
           }
-          if (seconds > 0) {
+          if (seconds >= 0) {
             timeStatement += seconds + " Seconds";
           }
           document.getElementById("timeLeft").innerText = timeStatement;
           // If the count down is finished, write some text
-          if (distance < 0) {
+          if (distance <= 0) {
             document.getElementById("timeLeft").innerText = "Sober :)";
+            document.getElementById("time").innerText = new Date();
           }
           var currentBAC = parseFloat(sessionStorage.getItem("BAC"));
-          if (currentBAC > 0) {
-          currentBAC -= (0.016)/(1000 * 60 * 60);
+          var BACPerDrink = parseFloat(sessionStorage.getItem("BACPer"));
+          if ((currentBAC > 0) && (BACPerDrink)) {
+          currentBAC = currentBAC - ((100 * BACPerDrink)/(1000 * 60 * 60)); //1000ms/1s * 60s/1min * 60min/1hr; 100ms in between each timeout
           }
           else {
             currentBAC = 0.000;

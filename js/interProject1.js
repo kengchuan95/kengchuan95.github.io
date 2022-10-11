@@ -1,9 +1,13 @@
 function calculateDrinks() {
+    var BACStorage = parseFloat(sessionStorage.getItem("BAC"));
+    if (!BACStorage) BACStorage = 0.000;
     var BACToAdd=calculateBACPer();
     document.getElementById("BACInteger").value=BACToAdd;
-    var currentBAC=parseFloat(document.getElementById("BAC").innerText);
-    currentBAC+=parseFloat(BACToAdd);
-    document.getElementById("BAC").innerText=currentBAC.toFixed(3);
+    var currentBAC = parseFloat(sessionStorage.getItem("BAC"));
+    BACStorage+=parseFloat(BACToAdd);
+    document.getElementById("BAC").innerText=BACStorage.toFixed(3);
+    sessionStorage.setItem("BAC",BACStorage);
+    var BACStorage = sessionStorage.getItem("BAC");
 
     if (currentBAC > 0.08) {
         alert("You are over the legal BAC to drive. Please drink water, eat some food, and wait!")

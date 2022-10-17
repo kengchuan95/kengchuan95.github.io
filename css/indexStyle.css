@@ -11,6 +11,8 @@ img {
 .container {
     background-color:gray;
     display:block;
+    padding-top:2em;
+    padding-bottom:2em;
 }
 .centered {
     overflow:auto;

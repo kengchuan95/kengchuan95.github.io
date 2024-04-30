@@ -6,10 +6,9 @@ img {
     max-width:100px;
 }
 .bordered {
-    border:1px blue solid;
+    border:2px gray solid !important;
 }
 .container {
-    background-color:gray;
     display:block;
     padding-top:2em;
     padding-bottom:2em;
@@ -19,18 +18,32 @@ img {
     text-align:center;
     display:block;
 }
-.gray {
-    background-color:gray !important;
-}
 .panel-header, .panel-footer, .panel-body {
     overflow:inherit;
 }
-.inRow {
-    display:inline-block;
+.panel-footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
 }
+
 .inline {
     display:inline-block;
 }
 .hidden {
     display:none;
+}
+
+.panel {
+    text-align:center !important;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 12em;
+}
+.row {
+    margin-left: auto;
+    margin-right: auto;
 }
